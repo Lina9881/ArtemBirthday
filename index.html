@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>С днём рождения, Артём!</title>
+
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Rubik+Spray+Paint&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue+Cyrillic&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ПЕРВАЯ СТРАНИЦА -->
+
+    <main class="container" id="page1">
+
+        <h1>Артём!</h1>
+
+        <h2>
+            Напомни, что сегодня за день и выбери
+            <br>
+            правильное поздравление:
+        </h2>
+
+        <div class="images">
+
+            <img
+                src="трусы.jpg"
+                alt="Поздравление 1"
+                onclick="wrongAnswer(this)"
+            >
+
+            <img
+                src="сдр.jpg"
+                alt="Поздравление 2"
+                onclick="correctAnswer(this)"
+            >
+
+            <img
+                src="с днем веток.jpg"
+                alt="Поздравление 3"
+                onclick="wrongAnswer(this)"
+            >
+
+            <img
+                src="сухари.jpg"
+                alt="Поздравление 4"
+                onclick="wrongAnswer(this)"
+            >
+
+        </div>
+
+        <!-- Поздравление появляется после правильного ответа -->
+
+        <section id="success" class="hidden">
+
+            <h2>
+                Ого! Неужели сегодня такой важный праздник!
+            </h2>
+
+            <button onclick="nextPage()">
+                Далее
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- ВТОРАЯ СТРАНИЦА -->
+
+    <section id="page2" class="page-two hidden">
+
+        <!-- Декоративные стикеры -->
+
+        <div class="sticker sticker-1">🍼</div>
+        <div class="sticker sticker-2">🧸</div>
+        <div class="sticker sticker-3">🪇</div>
+        <div class="sticker sticker-4">🧃</div>
+        <div class="sticker sticker-5">🪁</div>
+        <div class="sticker sticker-6">🧦</div>
+        <div class="sticker sticker-7">🧸</div>
+        <div class="sticker sticker-8">🍼</div>
+
+
+        <!-- Основной блок -->
+
+        <div class="birthday-content">
+
+            <h1>
+                Давайте узнаем о нашем имениннике
+                немного больше
+            </h1>
+
+            <h2>
+                Введи имя и дату рождения именинника:
+            </h2>
+
+
+            <!-- Форма -->
+
+            <form id="birthdayForm">
+
+                <!-- Имя -->
+
+                <div class="input-group">
+
+                    <label for="name">
+                        Имя именинника
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Введи имя..."
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Дата рождения -->
+
+                <div class="input-group">
+
+                    <label for="birthday">
+                        Дата рождения:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="birthday"
+                        placeholder="ДД/ММ/ГГГГ"
+                        pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
+                        title="Введите дату в формате ДД/ММ/ГГГГ"
+                        maxlength="10"
+                        inputmode="numeric"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Кнопка -->
+
+                <button type="submit">
+                    ОТВЕТИТЬ ✨
+                </button>
+
+            </form>
+
+
+            <!-- Декоративные элементы -->
+
+            <div class="decoration">
+                ★　🧸　★　🍼　★
+            </div>
+
+        </div>
+
+    </section>
+
+
+<!-- ТРЕТЬЯ СТРАНИЦА: АНКЕТА -->
+
+<section id="page3" class="page-three hidden">
+
+    <h1 class="quiz-title">
+        ВО ВЗРОСЛУЮ ЖИЗНЬ НУЖНО ВСТУПАТЬ С ПРАВИЛЬНЫМ НАСТРОЕМ.
+        ВЫБЕРИ ПОЖЕЛАНИЯ СЕБЕ НА ДЕНЬ РОЖДЕНИЯ
+    </h1>
+
+    <div class="quiz-form">
+
+        <div class="quiz-row">
+            <label>В прошлом году я хочу оставить:</label>
+            <div class="choices" data-group="leave">
+                <button type="button">грусть</button>
+                <button type="button">слабый интернет</button>
+                <button type="button">веселье</button>
+                <button type="button">плохие оценки</button>
+                <button type="button">чипсы</button>
+                <button type="button">неудачи</button>
+                <button type="button">смех</button>
+                <button type="button">болезни</button>
+                <button type="button">приятных мне людей</button>
+                <button type="button">переживания</button>
+            </div>
+        </div>
+
+        <div class="quiz-row">
+            <label>В будущем я хочу стать более:</label>
+            <div class="choices" data-group="become">
+                <button type="button">сильным</button>
+                <button type="button">глупым</button>
+                <button type="button">ленивым</button>
+                <button type="button">смешным</button>
+                <button type="button">остроумным</button>
+                <button type="button">целеустремленным</button>
+                <button type="button">невнимательным</button>
+                <button type="button">выносливым</button>
+                <button type="button">обаятельным</button>
+                <button type="button">неприятным</button>
+            </div>
+        </div>
+
+        <div class="quiz-row">
+            <label>Мне нравится, что я:</label>
+            <div class="choices" data-group="like">
+                <button type="button">добрый</button>
+                <button type="button">грустливый</button>
+                <button type="button">уважительный</button>
+                <button type="button">целеустремленный</button>
+            </div>
+        </div>
+
+        <div class="quiz-row">
+            <label>Мне не хватает:</label>
+            <div class="choices" data-group="lack">
+                <button type="button">смелости</button>
+                <button type="button">поноса</button>
+                <button type="button">сладостей</button>
+                <button type="button">гадостей</button>
+                <button type="button">удачи</button>
+                <button type="button">спокойствия</button>
+            </div>
+        </div>
+
+    </div>
+
+<button
+    type="button"
+    class="quiz-submit"
+    id="quizSubmit">
+    Ответить
+</button>
+
+</section>
+
+
+<!-- ЧЕТВЁРТАЯ СТРАНИЦА: ПОЗДРАВИТЕЛЬНОЕ ПИСЬМО -->
+
+<section id="page4" class="page-four hidden">
+
+    <div class="paper">
+
+        <div class="letter-content">
+
+    
+            <p class="letter-greeting">
+    Дорогой <span id="letterName">Артём</span>!
+</p>
+
+            <p>
+                Поздравляю тебя с днём Рождения!
+            </p>
+
+            <p>
+                Желаю тебе оставить
+                <span id="letterLeave"></span>
+                и всё плохое в прошлом году.
+            </p>
+
+            <p>
+                Искренне желаю тебе стать более
+                <span id="letterBecome"></span>
+                и каким ты сам хочешь стать.
+            </p>
+
+            <p>
+                Оставайся таким же
+                <span id="letterLike"></span>
+                и самым лучшим.
+            </p>
+
+            <p>
+                Желаю тебе больше
+                <span id="letterLack"></span>
+                и всего самого наилучшего
+                в дальнейшей жизни.
+            </p>
+
+            <p class="letter-signature">
+                от Полины
+            </p>
+
+        </div>
+
+        <button class="letter-next" onclick="finishLetter()">
+            Далее &gt;
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- JAVASCRIPT -->
+
+<!-- ПЯТАЯ СТРАНИЦА -->
+
+<section id="page5" class="page-five hidden">
+
+    <h1 class="fifth-title">НА ДЕНЬ РОЖДЕНИЯ ОБЫЧНО</h1>
+
+    <div class="birthday-options">
+
+        <!-- Первый вариант -->
+        <div class="option">
+            <label class="option-card">
+                <span>ПРИНИМАЮТ ПОЗДРАВЛЕНИЯ</span>
+            </label>
+
+            <input type="checkbox" class="birthday-check"
+                   value="поздравления">
+        </div>
+
+        <!-- Второй вариант -->
+        <div class="option">
+            <label class="option-card">
+                <span>ПОЛУЧАЮТ ПОДАРКИ</span>
+                <img src="рыпнуться.jpg" alt="Подарок"
+                     class="option-image">
+            </label>
+
+            <input type="checkbox" class="birthday-check"
+                   value="подарки">
+        </div>
+
+        <!-- Третий вариант -->
+        <div class="option">
+            <label class="option-card">
+                <span>ЗАДУВАЮТ СВЕЧИ НА ТОРТЕ</span>
+                 <p>
+                это к
+            </p>
+                <img src="родители.jpg" alt="Свечи на торте"
+                     class="option-image">
+                     <p>
+                это к
+            </p>
+            </label>
+
+            <input type="checkbox" class="birthday-check"
+                   value="свечи">
+        </div>
+
+    </div>
+
+    <h2 class="fifth-subtitle">
+        ВЫБЕРИ ТО, ЧЕГО ИЗ ЭТОГО У ТЕБЯ СЕГОДНЯ ЕЩЁ НЕ БЫЛО
+    </h2>
+
+    <button id="fifthButton" class="fifth-button"
+            type="button" onclick="getGifts()">
+        ОТВЕТИТЬ
+    </button>
+
+</section>
+
+
+<!-- ШЕСТАЯ СТРАНИЦА: ЗАДАНИЯ -->
+
+<section id="page6" class="page-six hidden">
+
+    <div class="pink-container">
+
+        <h1 class="pink-title">
+            Подарки нужно заслужить! 🎀
+        </h1>
+
+        <p class="pink-subtitle">
+            Узнай номер телефона, позвонив на который
+            ты узнаешь, где твои подарки!
+        </p>
+
+        <div class="tasks">
+
+            <!-- Задание 1 -->
+            <div class="task">
+                <p class="task-number">1.</p>
+                <div class="task-image">
+                    <img src="пример.png" alt="Первое задание">
+                </div>
+            </div>
+
+            <!-- Задание 2 -->
+            <div class="task">
+                <p><span>2.</span> Год крещения Руси:</p>
+            </div>
+
+            <!-- Задание 3 -->
+            <div class="task">
+                <p><span>3.</span> Количество дней в феврале?</p>
+            </div>
+
+            <!-- Задание 4 -->
+            <div class="task">
+                <p class="task-number">4.</p>
+                <div class="task-image zero-image">
+                    <img src="0.jpg" alt="Четвёртое задание">
+                </div>
+            </div>
+
+            <!-- Задание 5 -->
+            <div class="task">
+                <p><span>5.</span> Количество прингз в коллекции?</p>
+            </div>
+
+            <!-- Задание 6 -->
+            
+<!-- Задание 6 -->
+
+<div class="task task-gallery">
+
+    <p><span>6.</span> Номер дома с фото:</p>
+
+    <div class="photo-grid">
+
+        <img src="1.jpg" alt="Фото 1">
+        <img src="2.jpg" alt="Фото 2">
+        <img src="3.jpg" alt="Фото 3">
+        <img src="4.jpg" alt="Фото 4">
+        <img src="5.jpg" alt="Фото 5">
+        <img src="6.jpg" alt="Фото 6">
+        <img src="7.jpg" alt="Фото 7">
+        <img src="8.jpg" alt="Фото 8">
+        <img src="9.jpg" alt="Фото 9">
+        <img src="10.jpg" alt="Фото 10">
+        <img src="11.jpg" alt="Фото 11">
+        <img src="12.jpg" alt="Фото 12">
+        <img src="13.jpg" alt="Фото 13">
+        <img src="14.jpg" alt="Фото 14">
+        <img src="15.jpg" alt="Фото 15">
+        <img src="16.jpg" alt="Фото 16">
+        <img src="17.jpg" alt="Фото 17">
+
+    </div>
+
+</div>
+
+        </div>
+
+        <div class="pink-decoration">
+            ♡　🎀　♡　🧸　♡
+        </div>
+
+        
+        <button type="button" onclick="nextToPhonePage()">
+    Ответить
+</button>
+
+    </div>
+
+</section>
+
+
+<!-- СЕДЬМАЯ СТРАНИЦА: СЛЕДУЮЩИЙ ЭКРАН -->
+
+
+<!-- СЕДЬМАЯ СТРАНИЦА: ТЕЛЕФОН -->
+
+<section id="page7" class="phone-page hidden">
+
+    <div class="phone-container">
+
+        
+
+        <h1>ПОРА УЗНАТЬ СВОИ ПОДАРКИ!</h1>
+
+        <p>
+            Введи номер телефона, который ты получил,
+            и позвони, чтобы узнать, где тебя ждут подарки!
+        </p>
+
+        <div class="phone-decoration">
+    <span>◉</span>
+    <div class="system-status">SIGNAL DETECTED</div>
+</div>
+
+        <form id="phoneForm">
+
+            <label for="phoneNumber">
+                НОМЕР ТЕЛЕФОНА:
+            </label>
+
+            <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="+098XXXXXXXX"
+                autocomplete="tel"
+                required
+            >
+
+            <p id="phoneMessage"></p>
+
+            
+<button onclick="openJohnPork()">
+    ВЫЗОВ 📞
+</button>
+        </form>
+
+        <div class="phone-stickers">
+            ♡　🧸　♡　🎀　♡
+        </div>
+
+    </div>
+
+</section>
+<!-- ВОСЬМАЯ СТРАНИЦА: JOHN PORK -->
+
+<section id="page8" class="page-eight hidden">
+
+    <h1>📞 JOHN PORK IS CALLING...</h1>
+
+    <video id="johnPorkVideo" controls playsinline>
+        <source src="john pork.mp4" type="video/mp4">
+        Твой браузер не поддерживает видео.
+    </video>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
+

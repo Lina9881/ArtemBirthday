@@ -1,0 +1,1091 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #383838;
+    font-family: 'Climate Crisis', sans-serif;
+    color: white;
+    letter-spacing: 2px;
+}
+
+button {
+    font-family: 'Climate Crisis', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    text-align: center;
+    padding: 15px 10px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 35px;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.images img {
+    width: 24%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 2px solid white;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.images img:hover {
+    transform: scale(1.03);
+}
+
+.images img.selected {
+    border: 4px solid #50ff50;
+}
+
+#success {
+    margin-top: 45px;
+}
+
+#success h2 {
+    margin-bottom: 18px;
+}
+
+button {
+    background-color: #50ff50;
+    color: #292929;
+    border: none;
+    padding: 8px 35px;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+.hidden {
+    display: none;
+}
+
+button:hover {
+    background-color: #32c132;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    h2 {
+        font-size: 16px;
+    }
+
+    .images {
+        flex-wrap: wrap;
+    }
+
+    .images img {
+        width: 47%;
+    }
+}
+
+/* ===== ДЕТСКАЯ СТРАНИЦА ===== */
+
+.page-two {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: #9DF1F5;
+    padding: 55px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.page-two.hidden {
+    display: none;
+}
+
+.birthday-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+}
+
+/* Главный заголовок */
+
+.page-two h1 {
+    font-family: 'Rubik Spray Paint', cursive;
+    color: #493BFF;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.25;
+    margin-bottom: 35px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* Подзаголовок */
+
+.page-two h2 {
+    font-family: 'Rubik Spray Paint', cursive;
+    color: #DB69E8;
+    font-size: clamp(18px, 2.5vw, 27px);
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+/* Поля */
+
+#birthdayForm {
+    max-width: 540px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+.input-group label {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #493BFF;
+}
+
+.input-group input {
+    width: 100%;
+    height: 62px;
+    padding: 12px 20px;
+    background: white;
+    border: 4px solid #E9B5F3;
+    border-radius: 22px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+    color: #493BFF;
+    outline: none;
+    box-shadow: 0 5px 0 #D58BE8;
+}
+
+.input-group input:focus {
+    border-color: #493BFF;
+    transform: translateY(-2px);
+}
+
+.input-group input::placeholder {
+    color: #B8B5DC;
+}
+
+/* Кнопка */
+
+#birthdayForm button {
+    margin-top: 15px;
+    padding: 17px;
+    background: #493BFF;
+    color: white;
+    border: 4px solid white;
+    border-radius: 25px;
+    font-family: 'Rubik Spray Paint', cursive;
+    font-size: 27px;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 7px 0 #3026C5;
+    transition: 0.2s;
+}
+
+#birthdayForm button:hover {
+    transform: translateY(-4px) rotate(-1deg);
+    box-shadow: 0 11px 0 #3026C5;
+}
+
+/* Стикеры */
+
+.sticker {
+    position: absolute;
+    z-index: 1;
+    width: 85px;
+    height: 85px;
+    background: white;
+    border: 4px solid white;
+    border-radius: 24px;
+    box-shadow: 0 5px 10px #5CBFCB55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.sticker-1 {
+    top: 8%;
+    left: 7%;
+    transform: rotate(-15deg);
+}
+
+.sticker-2 {
+    top: 12%;
+    right: 8%;
+    transform: rotate(12deg);
+}
+
+.sticker-3 {
+    top: 43%;
+    left: 3%;
+    transform: rotate(10deg);
+}
+
+.sticker-4 {
+    top: 48%;
+    right: 4%;
+    transform: rotate(-12deg);
+}
+
+.sticker-5 {
+    bottom: 9%;
+    left: 12%;
+    transform: rotate(15deg);
+}
+
+.sticker-6 {
+    bottom: 8%;
+    right: 12%;
+    transform: rotate(-15deg);
+}
+
+.sticker-7 {
+    top: 76%;
+    left: 3%;
+    transform: rotate(-10deg);
+}
+
+.sticker-8 {
+    top: 75%;
+    right: 3%;
+    transform: rotate(12deg);
+}
+
+.decoration {
+    margin-top: 35px;
+    font-size: 30px;
+}
+
+/* Адаптация под телефон */
+
+@media (max-width: 600px) {
+    .page-two {
+        padding: 35px 18px;
+    }
+
+    .sticker {
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+    }
+
+    .sticker-3,
+    .sticker-4,
+    .sticker-7,
+    .sticker-8 {
+        display: none;
+    }
+
+    .page-two h1 {
+        font-size: 29px;
+    }
+
+    .page-two h2 {
+        font-size: 19px;
+    }
+
+    .input-group label {
+        font-size: 19px;
+    }
+}
+
+/* ===========================
+   ТРЕТЬЯ СТРАНИЦА — АНКЕТА
+=========================== */
+
+.page-three {
+    min-height: 100vh;
+    background: #FFE1B0;
+    padding: 30px;
+    text-align: center;
+    color: #38332D;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.page-three.hidden,
+.page-four.hidden {
+    display: none;
+}
+
+.quiz-title {
+    max-width: 850px;
+    margin: 0 auto 55px;
+    color: #FF5555;
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 27px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+.quiz-form {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.quiz-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.quiz-row label {
+    min-width: 175px;
+    font-size: 15px;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.choices button {
+    background: transparent;
+    border: 1px solid #B59B75;
+    color: #504637;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.choices button:hover {
+    background: #F5CFA0;
+}
+
+.choices button.selected {
+    background: #FF7777;
+    border-color: #FF7777;
+    color: white;
+}
+
+.quiz-submit {
+    margin-top: 40px;
+    background: white;
+    border: 1px solid #999;
+    border-radius: 10px;
+    padding: 9px 22px;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 15px;
+    cursor: pointer;
+    color: #38332D;
+}
+
+
+/* ===========================
+   ЧЕТВЁРТАЯ СТРАНИЦА — ПИСЬМО
+=========================== */
+
+@font-face {
+    font-family: 'Propisi';
+    src: url('fonts/propisi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.page-four {
+    min-height: 100vh;
+    background: #D9D9D9;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 750px;
+    padding: 35px 55px 65px 85px;
+
+    background-color: white;
+
+    background-image:
+        linear-gradient(
+            to right,
+            transparent 0,
+            transparent 54px,
+            #D77B8A 55px,
+            #D77B8A 57px,
+            transparent 58px
+        ),
+        repeating-linear-gradient(
+            to bottom,
+            white 0px,
+            white 26px,
+            #8BC5D8 27px,
+            white 28px
+        );
+
+    box-shadow: 0 3px 12px #00000015;
+}
+
+.letter-content {
+    font-family: 'Propisi', cursive;
+    font-size: 25px;
+    color: #5558BD;
+    line-height: 28px;
+    overflow-wrap: anywhere;
+}
+
+.letter-content p {
+    margin: 0 0 12px;
+}
+
+.letter-greeting {
+    text-align: center;
+    margin-bottom: 25px !important;
+}
+
+.letter-signature {
+    margin-top: 35px !important;
+}
+
+.letter-next {
+    position: absolute;
+    right: 35px;
+    bottom: 12px;
+    background: transparent;
+    border: none;
+    color: #5558BD;
+    font-family: 'Propisi', cursive;
+    font-size: 22px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* АДАПТАЦИЯ */
+
+@media (max-width: 700px) {
+
+    .page-three {
+        padding: 25px 15px;
+    }
+
+    .quiz-title {
+        font-size: 22px;
+        margin-bottom: 35px;
+    }
+
+    .quiz-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quiz-row label {
+        min-width: auto;
+    }
+
+    .quiz-form {
+        gap: 25px;
+    }
+
+    .paper {
+        padding: 30px 20px 60px 55px;
+        min-height: 700px;
+    }
+
+    .letter-content {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+/* ===========================
+   ПЯТАЯ СТРАНИЦА
+=========================== */
+
+.page-five {
+    min-height: 100vh;
+    padding: 30px 25px;
+    text-align: center;
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    color: white;
+
+    background:
+        linear-gradient(rgba(170, 145, 25, 0.35),
+                        rgba(170, 145, 25, 0.35)),
+        url("бэкрумс.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fifth-title {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+}
+
+.birthday-options {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    margin: 0 auto;
+    max-width: 850px;
+}
+
+.option {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-card {
+    width: 100%;
+    min-height: 76px;
+    padding: 10px 8px;
+    background: white;
+    color: #222;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.option-image {
+    display: none;
+    width: 110px;
+    height: 88px;
+    object-fit: cover;
+}
+
+.option input {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 2px solid white;
+    border-radius: 2px;
+    margin-top: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+.option input:checked::after {
+    content: "✓";
+    position: absolute;
+    top: -5px;
+    left: 2px;
+    color: #159b30;
+    font-size: 29px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.option input:checked ~ .option-card {
+    border: 2px solid #159b30;
+}
+
+/* Показываем картинки при выборе */
+
+.option:has(input:checked) .option-image {
+    display: block;
+}
+
+.fifth-subtitle {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin: 30px 0 55px;
+}
+
+.fifth-button {
+    background: white;
+    color: #222;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 28px;
+
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.fifth-button:hover {
+    background: #eeeeee;
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+@media (max-width: 600px) {
+    .birthday-options {
+        gap: 8px;
+    }
+
+    .option-card {
+        font-size: 12px;
+        min-height: 80px;
+    }
+
+    .fifth-subtitle {
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+}
+
+
+/* ===========================
+   ШЕСТАЯ СТРАНИЦА
+   РОЗОВЫЕ ЗАДАНИЯ
+=========================== */
+
+.page-six {
+    min-height: 100vh;
+    padding: 35px 20px;
+    background: #ffe5ef;
+    color: #75445c;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.pink-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px 35px;
+    background: #fff7fa;
+    border: 3px solid #f6b6ce;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(204, 116, 153, 0.15);
+}
+
+.pink-title {
+    text-align: center;
+    color: #e66b9c;
+    font-size: 34px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.pink-subtitle {
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #8f5972;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task {
+    background: #ffeaf2;
+    border: 2px solid #f5bfd2;
+    border-radius: 15px;
+    padding: 12px 18px;
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.task p {
+    margin: 0;
+}
+
+.task p span,
+.task-number {
+    color: #d85f91;
+    font-weight: 700;
+}
+
+.task-image {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.task-image img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(150, 80, 110, 0.15);
+}
+
+.zero-image img {
+    max-width: 215px;
+}
+
+.pink-decoration {
+    text-align: center;
+    font-size: 25px;
+    margin: 25px 0;
+}
+
+.pink-button {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 38px;
+    background: #ee86ae;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #cf638e;
+    transition: 0.2s;
+}
+
+.pink-button:hover {
+    background: #e66b9c;
+    transform: translateY(-3px);
+}
+
+.pink-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #cf638e;
+}
+
+/* Следующий экран */
+
+.page-seven {
+    min-height: 100vh;
+    background: #ffe5ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e66b9c;
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 24px;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .pink-container {
+        padding: 20px 14px;
+    }
+
+    .pink-title {
+        font-size: 27px;
+    }
+
+    .pink-subtitle {
+        font-size: 16px;
+    }
+
+    .task {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+}
+
+/* Галерея шестого задания */
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.photo-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    border-color: #ed8db4;
+}
+
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+}
+
+/* ===========================
+   СЕДЬМАЯ СТРАНИЦА
+   ТЕЛЕФОН
+=========================== */
+
+
+/* ===========================
+   SEVENTH PAGE — FUTURE TECH
+=========================== */
+
+.page-seven {
+    min-height: 100vh;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 20% 20%, #172c59 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, #35165d 0%, transparent 40%),
+        #070b18;
+
+    font-family: 'Space Grotesk', sans-serif;
+    color: #ffffff;
+}
+
+.phone-container {
+    width: 100%;
+    max-width: 620px;
+    padding: 45px 35px;
+
+    background: rgba(17, 27, 52, 0.8);
+    border: 1px solid rgba(86, 229, 255, 0.4);
+    border-radius: 24px;
+
+    box-shadow:
+        0 0 30px rgba(49, 178, 255, 0.15),
+        inset 0 0 30px rgba(86, 229, 255, 0.04);
+
+    text-align: center;
+    backdrop-filter: blur(15px);
+}
+
+.phone-stickers {
+    font-size: 25px;
+    letter-spacing: 8px;
+    margin: 15px 0;
+}
+
+.phone-container h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #56e5ff;
+
+    text-shadow: 0 0 15px rgba(86, 229, 255, 0.5);
+
+    margin-bottom: 20px;
+}
+
+.phone-container > p {
+    color: #b9c9e5;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.phone-decoration {
+    font-size: 75px;
+    margin: 25px;
+    filter: drop-shadow(0 0 15px #56e5ff);
+}
+
+#phoneForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+#phoneForm label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #b58bff;
+}
+
+#phoneNumber {
+    width: 90%;
+    max-width: 380px;
+    padding: 17px;
+
+    background: rgba(5, 12, 30, 0.9);
+    border: 1px solid #56e5ff;
+    border-radius: 12px;
+
+    color: #56e5ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 19px;
+    text-align: center;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+#phoneNumber::placeholder {
+    color: #657b9e;
+    font-size: 14px;
+}
+
+#phoneNumber:focus {
+    border-color: #b58bff;
+    box-shadow:
+        0 0 10px #56e5ff,
+        0 0 25px rgba(181, 139, 255, 0.3);
+}
+
+.call-button {
+    padding: 15px 45px;
+
+    background: linear-gradient(90deg, #287bff, #8c4dff);
+    color: white;
+
+    border: 1px solid #8adfff;
+    border-radius: 12px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 20px rgba(86, 150, 255, 0.4);
+    transition: 0.3s;
+}
+
+.call-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(86, 229, 255, 0.7);
+}
+
+.call-button:active {
+    transform: scale(0.97);
+}
+
+#phoneMessage {
+    min-height: 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .phone-container {
+        padding: 30px 18px;
+    }
+
+    .phone-container h1 {
+        font-size: 21px;
+    }
+
+    .phone-container > p {
+        font-size: 15px;
+    }
+
+    #phoneNumber {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+.phone-decoration span {
+    display: inline-block;
+    color: #56e5ff;
+    text-shadow: 0 0 25px #56e5ff;
+    animation: pulse 2s infinite;
+}
+
+.system-status {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #8c9fca;
+    margin-top: 10px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.6;
+    }
+}
+/* Скрытие страниц */
+.hidden {
+    display: none !important;
+}
+.page-eight {
+    min-height: 100vh;
+    background: #080d20;
+    color: #50eaff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.page-eight h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+.page-eight video {
+    width: 90%;
+    max-width: 600px;
+    border: 2px solid #50eaff;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #087bff;
+}
